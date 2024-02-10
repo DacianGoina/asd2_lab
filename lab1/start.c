@@ -16,8 +16,6 @@ void print_array(int a[], int n){
 }
 
 int main() {
-   // printf() displays the string inside quotation
-
     int v[] = {2, 4, 5, 8, 10};
     int n = 5;
     print_array(v, n);
