@@ -1,0 +1,5 @@
+COMPILE 	gcc program.c -o output_executable
+RUN 	./output_executable
+
+
+SINGLE: gcc program.c -o output_executable && ./output_executable
