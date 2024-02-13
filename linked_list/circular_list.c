@@ -99,12 +99,5 @@ int main(){
     printf("\n");
     print_list_items(l2);
 
-//    float list_elem_mean = compute_list_mean(l2);
-//    printf("mean: %f\n", list_elem_mean);
-//
-//    append_elem_to_list(l2, 80);
-//    print_plain_list_items(l2);
-//    printf("mean: %f\n", compute_list_mean(l2));
-
     return 0;
 }
