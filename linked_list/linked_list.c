@@ -33,6 +33,42 @@ void print_plain_list_items(struct simple_list l1){
     }
 }
 
+// compute mean of elements from the list
+float compute_list_mean(struct simple_list l){
+    struct node *current_node = l.head;
+    int sum = 0;
+    int counter = 0;
+    while(current_node != NULL){
+        sum = sum + current_node->value;
+        counter++;
+        current_node = current_node->next;
+    }
+
+    if(counter == 0)
+        return 0.0;
+
+    float mean_value = (float)sum/counter;
+    return mean_value;
+}
+
+// append at the end
+void append_elem_to_list(struct simple_list l, int new_elem_value){
+    struct node *current_node = l.head;
+    // go to the end of the list
+    while(current_node->next != NULL){
+        current_node = current_node->next;
+    }
+
+    // create a new node
+    struct node *new_node = malloc(sizeof(struct node));
+    new_node-> value = new_elem_value;
+    new_node->next = NULL;
+
+    // add new node to the end of the list
+    current_node->next = new_node;
+
+}
+
 int main(){
     printf("success\n");
 
@@ -62,5 +98,13 @@ int main(){
     struct simple_list l2;
     l2.head = n1;
     print_plain_list_items(l2);
+
+    float list_elem_mean = compute_list_mean(l2);
+    printf("mean: %f\n", list_elem_mean);
+
+    append_elem_to_list(l2, 80);
+    print_plain_list_items(l2);
+    printf("mean: %f\n", compute_list_mean(l2));
+
     return 0;
 }
